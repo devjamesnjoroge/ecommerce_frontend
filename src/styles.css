@@ -12,6 +12,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: aliceblue;
 }
 
+.form-group{
+    width: 100%;
+}
+    
+.centered{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vintage{
+    color: var(--vintage);
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
