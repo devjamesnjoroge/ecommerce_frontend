@@ -16,3 +16,32 @@
   z-index: 1;
 }
 
+.mat-toolbar{
+  background-color: #773f1a;
+}
+
+.light{
+  color: aliceblue;
+}
+
+.mat-icon-button{
+  color: aliceblue;
+}
+
+.bg-light{
+  background-color: aliceblue;
+}
+
+.d-flex{
+  display: flex;
+  width: 100%;
+}
+
+.justify-content-between{
+  justify-content: space-between;
+}
+
+.btns{
+  display: flex;
+  gap: 2rem;
+}
