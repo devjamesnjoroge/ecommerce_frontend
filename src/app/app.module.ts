@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSliderModule } from '@angular/material/slider';
-import { HttpClientModule } from '@angular/common/http'
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,12 +14,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { RegisterComponent } from './components/register/register.component';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

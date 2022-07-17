@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row centered">
+        <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 border p-5 rounded">
+            <h3 class="text-center vintage">Register</h3>
+            <hr>
+            <form *ngIf="!isLoggedIn">
+                <mat-form-field class="form-group">
+                 <mat-label>Email address</mat-label>
+                 <input matInput type="email">
+                </mat-form-field>
+                 <mat-form-field class="form-group">
+                     <mat-label>Username</mat-label>
+                     <input matInput type="text">
+                 </mat-form-field>
+                <mat-form-field class="form-group">
+                 <mat-label>Password</mat-label>
+                 <input matInput type="password">
+                </mat-form-field>
+                <mat-form-field class="form-group">
+                 <mat-label>Confirm password</mat-label>
+                 <input matInput type="password">
+                </mat-form-field>
+                <button mat-raised-button class="vint mt-3">Register</button>
+             </form>
+        </div>
+    </div>
+</div>

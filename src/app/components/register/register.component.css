@@ -1,0 +1,15 @@
+
+.form-group{
+width: 100%;
+}
+
+.centered{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vintage{
+    color: var(--vintage);
+}
