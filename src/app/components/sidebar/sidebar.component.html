@@ -1,0 +1,91 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar>Menu</mat-toolbar>
+        <mat-nav-list>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    Categories
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                    <mat-list>
+                        <a mat-list-item href="">Suits</a>
+                        <a mat-list-item href="">Jeans</a>
+                        <a mat-list-item href="">Shirts</a>
+                        <a mat-list-item href="">Shoes</a>
+                        <a mat-list-item href="">Ties</a>
+                        <a mat-list-item href="">Belts</a>
+                        <a mat-list-item href="">Watches</a>
+                        <a mat-list-item href="">socks</a>
+                        <a mat-list-item href="">hats</a>
+                    </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    Filter by
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                    <mat-list>
+                        <a mat-list-item href="">Price</a>
+                        <a mat-list-item href="">Brand</a>
+                        <a mat-list-item href="">Location</a>
+                        <a mat-list-item href="">Delivery</a>
+                    </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    Designs
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                    <mat-list>
+                        <a mat-list-item href="">Drawings</a>
+                        <a mat-list-item href="">Prototypes</a>
+                        <a mat-list-item href="">Rated</a>
+                    </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    Production
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                    <mat-list>
+                        <a mat-list-item href="">Hand made</a>
+                        <a mat-list-item href="">Machine made</a>
+                    </mat-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    Tailored
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                    <mat-list>
+                        <a mat-list-item href="">slim</a>
+                        <a mat-list-item href="">slim fit</a>
+                        <a mat-list-item href="">Normal fit</a>
+                        <a mat-list-item href="">large</a>
+                        <a mat-list-item href="">custom</a>
+                    </mat-list>
+            </mat-expansion-panel>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+            <span>Mens Fashion</span>
+
+        </mat-toolbar>
+        <!-- Add Content Here -->
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
