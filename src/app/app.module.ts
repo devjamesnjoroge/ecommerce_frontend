@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { RegisterComponent } from './components/register/register.component';
 import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { LoginComponent } from './components/login/login.component';
     MatExpansionModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
