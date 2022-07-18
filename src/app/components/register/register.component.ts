@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { throwError } from 'rxjs';
+import { catchError, throwError } from 'rxjs';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 
 @Component({
@@ -11,8 +11,8 @@ import { AuthServiceService } from 'src/app/services/auth-service.service';
 export class RegisterComponent implements OnInit {
 
   form! : FormGroup;
-  alert! : string;
-
+  alert!: string;
+  
   isLoggedIn = false;
 
   constructor(private authService: AuthServiceService) { }
@@ -31,22 +31,19 @@ export class RegisterComponent implements OnInit {
   }
 
   handleError(error: any) {
-    this.alert = error.error[Object.keys(error.error)[0]];
+    console.log(error.error[Object.keys(error.error)[0]])
     return throwError(error);
   }
 
   onSubmit(){
-    const email = this.f['email'].value;
-    const username = this.f['username'].value;
-    const password = this.f['password'].value;
+    this.authService.registerUsers(this.f['email'].value,
+    this.f['username'].value,
+    this.f['password'].value).pipe(catchError(this.handleError)).subscribe(
+      data =>{
+        console.log(data)
+      }
+      )
 
-    this.authService.registerUsers(email, username, password).pipe(
-      this.handleError
-      ).subscribe(
-        data =>{
-          console.log(data)
-        }
-        )
   }
 
 }
