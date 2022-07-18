@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   isLoggedIn: boolean = false;
   isLoginFailed: boolean = false;
   errorMessage!: any;
+  successMessage!: any;
 
   constructor(private token : TokenStorageService, private authService: AuthServiceService) { }
 
@@ -23,7 +24,13 @@ export class LoginComponent implements OnInit {
       username : new FormControl(''),
       password : new FormControl(''),
     })
-    console.error(this.isLoginFailed)
+    if (this.token.getToken()){
+      this.isLoggedIn = true;
+      this.form.disable()
+      this.successMessage = 'You are currently Logged in.'
+    }
+
+    console.log(this.isLoggedIn)
   }
 
   get f(){
@@ -52,7 +59,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.errorMessage = null
-        console.log(this.isLoggedIn)
+        location.reload()
       }
     })
     

@@ -34,4 +34,9 @@ export class TokenStorageService {
     return {};
   }
 
+  public logout(): any{
+    window.sessionStorage.removeItem(TOKEN_KEY);
+    window.sessionStorage.removeItem(USER_KEY);
+  }
+
 }

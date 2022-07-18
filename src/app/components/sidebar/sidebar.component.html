@@ -84,9 +84,12 @@
       </button>
             <div class="d-flex justify-content-between">
                 <span class="light">Mens Fashion</span>
-                <div class="btns">
+                <div *ngIf="!isLoggedIn" class="btns">
                     <a mat-flat-button class="accent" routerLink="/register">Register</a>
                     <a mat-flat-button class="accent" routerLink="/login">Login</a>
+                </div>
+                <div *ngIf="isLoggedIn" class="btns">
+                    <a mat-flat-button class="accent" (click)="logOut()">Logout</a>
                 </div>
             </div>
         </mat-toolbar>
