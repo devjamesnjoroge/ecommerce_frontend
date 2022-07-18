@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   alert!: string;
   errorMessage!: any;
   isLoggedIn = false;
-  successFul!: boolean;
+  successFul: boolean = false;
 
   constructor(private authService: AuthServiceService) { }
 
@@ -25,6 +25,9 @@ export class RegisterComponent implements OnInit {
       password: new FormControl(''),
       confirm_password: new FormControl(''),
     })
+    if (this.successFul == true){
+      this.form.disable()
+    }
   }
 
   get f(){
@@ -48,6 +51,7 @@ export class RegisterComponent implements OnInit {
         complete: () => {
           console.log('successful');
           this.successFul = true;
+          location.href = '/login'
         }
       })
 
