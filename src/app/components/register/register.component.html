@@ -3,26 +3,26 @@
         <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 border p-5 rounded sm-padding">
             <h3 class="text-center vintage">Register</h3>
             <hr>
-            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <form [formGroup]="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
                 <mat-form-field class="form-group">
                  <mat-label>Email address</mat-label>
-                 <input matInput type="email" formControlName="email">
+                 <input matInput type="email" required formControlName="email" name="email">
                 </mat-form-field>
                  <mat-form-field class="form-group">
                      <mat-label>Username</mat-label>
-                     <input matInput type="text" formControlName="username">
+                     <input matInput type="text" required formControlName="username">
                  </mat-form-field>
                 <mat-form-field class="form-group">
                  <mat-label>Password</mat-label>
-                 <input matInput type="password" formControlName="password">
+                 <input matInput type="password" required formControlName="password">
                 </mat-form-field>
                 <mat-form-field class="form-group">
                  <mat-label>Confirm password</mat-label>
-                 <input matInput type="password" formControlName="confirm_password">
+                 <input matInput type="password" required formControlName="confirm_password">
                 </mat-form-field>
                 <button type="submit" mat-raised-button class="vint mt-3">Register</button>
-                <div *ngIf="alert" class="alert alert-danger mt-3">
-                    <p>{{alert}}</p>
+                <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                    {{ errorMessage }}
                 </div>
              </form>
         </div>

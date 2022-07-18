@@ -12,8 +12,9 @@ export class RegisterComponent implements OnInit {
 
   form! : FormGroup;
   alert!: string;
-  
+  errorMessage!: any;
   isLoggedIn = false;
+  successFul!: boolean;
 
   constructor(private authService: AuthServiceService) { }
 
@@ -38,11 +39,17 @@ export class RegisterComponent implements OnInit {
   onSubmit(){
     this.authService.registerUsers(this.f['email'].value,
     this.f['username'].value,
-    this.f['password'].value).pipe(catchError(this.handleError)).subscribe(
-      data =>{
-        console.log(data)
-      }
-      )
+    this.f['password'].value).subscribe({
+        next: (data) => console.log(data),
+        error: (error) => {
+          console.error(error);
+          this.errorMessage = error.error[Object.keys(error.error)[0]];
+        },
+        complete: () => {
+          console.log('successful');
+          this.successFul = true;
+        }
+      })
 
   }
 
