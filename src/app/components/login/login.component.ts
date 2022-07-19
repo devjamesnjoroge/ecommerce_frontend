@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.errorMessage = null
-        location.reload()
+        location.href='/home'
       }
     })
     

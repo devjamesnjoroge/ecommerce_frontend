@@ -15,6 +15,12 @@ export class DepartmentsComponent implements OnInit {
       shareReplay()
     );
 
+  isTablet$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {

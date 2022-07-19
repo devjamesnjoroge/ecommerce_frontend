@@ -110,9 +110,30 @@
               </form>
                <div class="nav-icons">
                 <mat-icon *ngIf="isHandset$ | async" aria-hidden="false" aria-label="Example acoount_circle icon">search</mat-icon>
-                <mat-icon aria-hidden="false" aria-label="Example acoount_circle icon">account_circle</mat-icon>
+                <mat-icon mat-button [matMenuTriggerFor]="beforeMenu" aria-hidden="false" aria-label="Example acoount_circle icon">account_circle</mat-icon>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                    <div *ngIf="!isLoggedIn" class="d-flex p-4">
+                        <a href="/register" class="btn rounded-pill border me-2">Register</a>
+                        <a href="/login" class="btn rounded-pill border ms-2">Login</a>
+                    </div>
+                    <div *ngIf="isLoggedIn" class="d-flex align-items-center p-4">
+                        <button class="btn rounded-pill border me-2" (click)="logOut()">Logout</button>
+                    </div>
+                    <div class="d-flex align-items-center pe-4 ps-4 pb-4">
+                        <mat-icon>history</mat-icon>
+                        <span class="ms-2">Recently viewed</span>
+                    </div>
+                    <div class="d-flex align-items-center pe-4 ps-4 pb-4">
+                        <mat-icon>account_box</mat-icon>
+                        <span class="ms-2">Account details</span>
+                    </div>
+                    <div class="d-flex align-items-center pe-4 ps-4 pb-4">
+                        <mat-icon>inbox</mat-icon>
+                        <span class="ms-2">Inbox</span>
+                    </div>
+                </mat-menu>
                 <mat-icon aria-hidden="false" aria-label="Example favorite icon">favorite</mat-icon>
-                <mat-icon aria-hidden="false" aria-label="Example explore icon">explore</mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Example explore icon">shopping_cart</mat-icon>
                </div>
             </div>
         </mat-toolbar>

@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
 import { DepartmentsComponent } from './components/departments/departments.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MatMenuModule} from '@angular/material/menu';
     LoginComponent,
     MainComponent,
     DepartmentsComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,

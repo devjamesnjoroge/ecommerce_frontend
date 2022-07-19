@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500;700;800&display=swap');
+
+.orange{
+    background-color: orange;
+}
+
+.centered{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.vh-45{
+    height: 90vh;
+}
+
+.vh-30{
+    height: 60vh;
+}
+
+.water{
+    background: url(https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658253384/25_wkxdfw.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.fl{
+    font-size: 48px;
+}
+
+.ss-ban h2, .ss-ban span{
+    font-size: xx-large;
+    margin-bottom: 2rem;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+
+.ss-ban{
+    background-image: url(https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658248689/236016547_200827215403582_2448070051179731435_n_e0fxdl.jpg);
+    background-size: cover;
+    background-position: center;
+    color: aliceblue;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+@media screen and (max-width: 820px) {
+
+    .ms-ban{
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 820px) {
+
+    .ss-ban{
+        display: none;
+    }
+    
+}
