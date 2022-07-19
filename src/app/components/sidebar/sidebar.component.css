@@ -45,3 +45,22 @@
   display: flex;
   gap: 2rem;
 }
+
+.hidden{
+  display: none;
+}
+
+.search{
+  background-color: gainsboro;
+  outline: none!important;
+  border: none;
+  font-size: medium;
+}
+
+.nav-icons{
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}

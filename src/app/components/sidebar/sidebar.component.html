@@ -1,5 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false" [ngClass]="{'hidden': !(isHandset$ | async)}"
+    >
         <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>
             <mat-expansion-panel (opened)="panelOpenState = true"
@@ -82,18 +83,20 @@
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-            <div class="d-flex justify-content-between">
-                <span class="light">Mens Fashion</span>
-                <div *ngIf="!isLoggedIn" class="btns">
-                    <a mat-flat-button class="accent" routerLink="/register">Register</a>
-                    <a mat-flat-button class="accent" routerLink="/login">Login</a>
-                </div>
-                <div *ngIf="isLoggedIn" class="btns">
-                    <a mat-flat-button class="accent" (click)="logOut()">Logout</a>
-                </div>
+            <div class="d-flex justify-content-between align-items-center container">
+                <span class="light">MENS-OUTFITS</span>
+              <form *ngIf="!(isHandset$ | async)">
+                <input type="text" name="search" id="search" class="search rounded ps-2" placeholder="search">
+              </form>
+               <div class="nav-icons">
+                <mat-icon *ngIf="isHandset$ | async" aria-hidden="false" aria-label="Example acoount_circle icon">search</mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Example acoount_circle icon">account_circle</mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Example favorite icon">favorite</mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Example explore icon">explore</mat-icon>
+               </div>
             </div>
         </mat-toolbar>
         <!-- Add Content Here -->
-
+        <ng-content></ng-content>
     </mat-sidenav-content>
 </mat-sidenav-container>

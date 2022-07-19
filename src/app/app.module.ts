@@ -19,6 +19,7 @@ import { RegisterComponent } from './components/register/register.component';
 import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MainComponent } from './components/main/main.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     RegisterComponent,
     LoginComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
