@@ -1,0 +1,73 @@
+<div *ngIf="!(isHandset$ | async)" class="detailed-nav">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3 col-lg-2 departments mb-3">
+    
+                <button mat-button [matMenuTriggerFor]="menu">Clothings</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-md-3 col-lg-2 departments mb-3">
+    
+                <button mat-button [matMenuTriggerFor]="menu">Shoes</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-md-3 col-lg-2 departments mb-3">
+    
+                <button mat-button [matMenuTriggerFor]="menu">Jeans</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-md-3 col-lg-2 departments mb-3">
+    
+                <button mat-button [matMenuTriggerFor]="menu">Tops</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-md-3 col-lg-2 departments mb-3">
+    
+                <button mat-button [matMenuTriggerFor]="menu">Graphic & Tees</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-md-3 col-lg-2 departments mb-3">
+    
+                <button mat-button [matMenuTriggerFor]="menu">Bottoms</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-md-3 col-lg-2 departments mb-3">
+    
+                <button mat-button [matMenuTriggerFor]="menu">Hoodies & sweats</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-md-3 col-lg-2 departments mb-3">
+    
+                <button mat-button [matMenuTriggerFor]="menu">Accessories</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+          
+        </div>
+    </div>
+    
+    <hr>
+</div>

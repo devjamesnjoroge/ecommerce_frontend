@@ -20,7 +20,8 @@ import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
-
+import { DepartmentsComponent } from './components/departments/departments.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MainComponent } from './components/main/main.component';
     RegisterComponent,
     LoginComponent,
     MainComponent,
+    DepartmentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { MainComponent } from './components/main/main.component';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
