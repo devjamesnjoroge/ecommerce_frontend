@@ -44,9 +44,27 @@
     font-family: 'Alegreya Sans SC', sans-serif;
 }
 
+.g-ban{
+    background-image: url(https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658256951/25_1_fmfdei.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.gs-ban{
+    background-image: url(https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658257239/277076002_692766005502224_2950436513675033925_n_cgldmb.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
 @media screen and (max-width: 820px) {
 
     .ms-ban{
+        display: none;
+    }
+
+    .g-ban{
         display: none;
     }
     
@@ -55,6 +73,10 @@
 @media screen and (min-width: 820px) {
 
     .ss-ban{
+        display: none;
+    }
+
+    .gs-ban{
         display: none;
     }
     
