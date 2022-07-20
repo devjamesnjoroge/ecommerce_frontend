@@ -1,12 +1,12 @@
 <app-sidebar>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-3 mb-5" *ngFor="let arr of array">
+            <div class="col-lg-3 col-md-4 mb-5 justify-content-center align-items-center d-flex flex-column" *ngFor="let arr of array">
                 <img src="https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658300361/Untitled_design_3_klscz4.png" alt="" class="img-fluid img-responsive rounded">
                 <div class="d-flex vintage mt-4">
-                    <div class="btns">
-                        <button mat-raised-button><mat-icon>favorite</mat-icon> wishlist</button>
-                        <button mat-raised-button class="ms-4"><mat-icon>add</mat-icon>View</button>
+                    <div class="btns d-flex flex-column flex-lg-row">
+                        <button mat-raised-button class="mb-4 me-4"><mat-icon>favorite</mat-icon> wishlist</button>
+                        <button mat-raised-button class="mb-4 me-4"><mat-icon>add</mat-icon>View</button>
                     </div>
                 </div>
             </div>
