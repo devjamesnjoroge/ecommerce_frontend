@@ -1,21 +1,10 @@
 <hr>
-<div class="container-fluid">
-    <div class="row flex-wrap">
-        <img class="img-fluid img-responsive" src="https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658289182/1_yafnei.png" alt="">
+<div *ngFor="let banner of banners">
+    <div class="container-fluid">
+        <div class="row flex-wrap">
+            <img class="img-fluid img-responsive" src="{{banner.image_url}}" alt="">
+        </div>
     </div>
-</div>
-<hr>
+    <hr>
 
-<div class="container-fluid">
-    <div class="row flex-wrap">
-        <img class="img-fluid img-responsive" src="https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658289181/2_v2iqkd.png" alt="">
-    </div>
 </div>
-<hr>
-
-<div class="container-fluid">
-    <div class="row flex-wrap">
-        <img class="img-fluid img-responsive" src="https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658289181/3_x1z7io.png" alt="">
-    </div>
-</div>
-<hr>
