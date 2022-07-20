@@ -25,6 +25,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ProductComponent } from './components/product/product.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { CollectionsComponent } from './components/collections/collections.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {MatChipsModule} from '@angular/material/chips';
     DepartmentsComponent,
     GalleryComponent,
     ProductComponent,
+    CollectionsComponent,
   ],
   imports: [
     BrowserModule,
