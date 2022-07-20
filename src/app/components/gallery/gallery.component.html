@@ -1,8 +1,21 @@
-<hr>
-<div *ngFor="let banner of banners">
-    <div class="container-fluid">
+
+<div class="mt-3">
+    <div class="container-fluid" *ngFor="let banner of banners">
         <div class="row flex-wrap">
             <img class="img-fluid img-responsive" src="{{banner.image_url}}" alt="">
+        </div>
+        <hr>
+    </div>
+
+    <div class="container-fluid">
+        <h2 class="mt-2 mb-2 vintage">SHOES.</h2>
+        <div class="row flex-wrap">
+            <div class="col-6">
+            <img class="img-fluid img-responsive" src="https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658291397/1_cwb7h5.png" alt="">
+            </div>
+            <div class="col-6">
+            <img class="img-fluid img-responsive" src="https://res.cloudinary.com/dkz8w5n6k/image/upload/v1658291396/2_zxyvdz.png" alt="">
+            </div>
         </div>
     </div>
     <hr>
