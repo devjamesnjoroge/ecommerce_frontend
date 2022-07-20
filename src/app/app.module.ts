@@ -23,6 +23,8 @@ import { MainComponent } from './components/main/main.component';
 import { DepartmentsComponent } from './components/departments/departments.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { ProductComponent } from './components/product/product.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     MainComponent,
     DepartmentsComponent,
     GalleryComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

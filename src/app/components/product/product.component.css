@@ -1,0 +1,14 @@
+img{
+    height: 300px;
+}
+
+.centered{
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 3vh;
+}
+
