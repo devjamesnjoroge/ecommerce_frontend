@@ -26,6 +26,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { ProductComponent } from './components/product/product.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { CollectionsComponent } from './components/collections/collections.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { CollectionsComponent } from './components/collections/collections.compo
     ReactiveFormsModule,
     MatMenuModule,
     MatChipsModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
