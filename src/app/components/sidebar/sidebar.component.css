@@ -64,3 +64,30 @@
   gap: 1rem;
   cursor: pointer;
 }
+
+.carts{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  color: aliceblue;
+  position: fixed;
+  z-index: 999;
+  border: 1px solid #773f1a;
+  border-radius: 5px;
+}
+
+.close{
+  position: absolute;
+  right: 32px;
+  top: 32px;
+}
+
+@media screen and (max-width: 576px) {
+
+  .carts{
+    width: 75%;
+  }
+  
+}

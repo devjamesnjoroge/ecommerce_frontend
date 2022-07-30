@@ -27,6 +27,8 @@ import { ProductComponent } from './components/product/product.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { CollectionsComponent } from './components/collections/collections.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import {MatBadgeModule} from '@angular/material/badge';
     ReactiveFormsModule,
     MatMenuModule,
     MatChipsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatStepperModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
