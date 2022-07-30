@@ -133,7 +133,7 @@
                     </div>
                 </mat-menu>
                 <mat-icon aria-hidden="false" aria-label="Example favorite icon">favorite</mat-icon>
-                <mat-icon aria-hidden="false" matBadge="{{totalItems.length}}" matBadgeOverlap="false" matBadgeColor="warn" aria-label="Example explore icon">shopping_cart</mat-icon>
+                <mat-icon aria-hidden="false" matBadge="{{totalItems.length}}" matBadgeOverlap="false" matBadgeColor="warn" aria-label="Example explore icon" (click)="open()">shopping_cart</mat-icon>
                </div>
             </div>
         </mat-toolbar>
@@ -142,16 +142,20 @@
     </mat-sidenav-content>
 </mat-sidenav-container>
 
-<div class="container bg-lighter carts p-4 vintage">
+<div class="container bg-lighter carts p-4 vintage open">
     
-        <mat-icon class="close vintage"  (click)="close()">close</mat-icon>
+        <mat-icon class="close vintage" (click)="close()">close</mat-icon>
 
         <h3 class="vintage ms-2">Items in cart</h3>
 
         <div class="container">
-            <div class="row">
-                <mat-divider class="vint mb-4"></mat-divider>
-                <div class="col-4"><img src="https://images.unsplash.com/photo-1507253831417-37c43a944f51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=350&h=450&q=80" alt="" class="img-responsive img-fluid rounded"></div>
+            <div class="row" *ngFor="let item of totalItems">
+                <mat-divider class="vint mb-4 mt-4"></mat-divider>
+                <div class="col-4"><img src="{{item.url}}w=175&h=225&q=80" alt="" class="img-responsive img-fluid rounded"></div>
             </div>
+        </div>
+        <div class="container w-100 d-flex justify-content-between mt-4" *ngIf="totalItems.length>0">
+            <button type="submit" mat-raised-button>Checkout</button>
+            <button type="submit" mat-raised-button (click)="emptyCart()">Empty <mat-icon>delete</mat-icon></button>
         </div>
 </div>

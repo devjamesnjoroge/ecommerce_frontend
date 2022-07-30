@@ -29,6 +29,7 @@ import { CollectionsComponent } from './components/collections/collections.compo
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { CloseDirective } from './directives/close.directive';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     GalleryComponent,
     ProductComponent,
     CollectionsComponent,
+    CloseDirective,
   ],
   imports: [
     BrowserModule,

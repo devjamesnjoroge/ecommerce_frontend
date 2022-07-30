@@ -41,7 +41,20 @@ export class SidebarComponent {
     
   }
 
-  close(){}
+  close(){
+    document.querySelector(".carts")?.classList.remove("closed")
+    document.querySelector(".carts")?.classList.add("open")
+  }
+
+  open(){
+    document.querySelector(".carts")?.classList.remove("open")
+    document.querySelector(".carts")?.classList.add("closed")
+  }
+
+  emptyCart(){
+    this.cart.clearCart()
+    window.location.reload()
+  }
 
 
 }
