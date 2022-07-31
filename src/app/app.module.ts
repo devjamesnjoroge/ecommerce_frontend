@@ -30,6 +30,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { CloseDirective } from './directives/close.directive';
+import { HoverDirective } from './directives/hover.directive';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CloseDirective } from './directives/close.directive';
     ProductComponent,
     CollectionsComponent,
     CloseDirective,
+    HoverDirective,
   ],
   imports: [
     BrowserModule,

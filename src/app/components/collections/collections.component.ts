@@ -18,10 +18,10 @@ export class CollectionsComponent implements OnInit {
   }
 
   addToCart(cart: any) {
-    alert('Item added to cart');
     this.cart.addToCart(cart);
     this.cart.getTotal()
-    console.log(this.cart.getTotal())
+    document.querySelector(".carts")?.classList.remove("open")
+    document.querySelector(".carts")?.classList.add("closed")
   }
 
 }

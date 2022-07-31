@@ -5,20 +5,29 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 })
 export class CloseDirective {
  
-  toggleClass = document.getElementsByClassName("carts");
    
   constructor(private elem:ElementRef){}
 
   @HostListener("click") onClicks(){
-    this.textDeco("open")
+    this.textDeco("green")
   }
 
-  @HostListener("dblclick") onDoubleClicks(){
-    this.textDeco("None")
+  @HostListener("mouseenter") onMouseEnters(){
+    this.transform("20px")
   }
+
+  @HostListener("mouseleave") onMouseLeaves(){
+    this.transform("16px")
+  }
+
 
   private textDeco(action:string){
-    this.elem.nativeElement.style.textDecoration = action;
+    this.elem.nativeElement.style.color = action;
+
+  }
+
+  private transform(action:string){
+    this.elem.nativeElement.style.fontSize = action;
 
   }
 
