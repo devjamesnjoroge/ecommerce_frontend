@@ -138,24 +138,33 @@
             </div>
         </mat-toolbar>
         <!-- Add Content Here -->
-        <ng-content></ng-content>
+        <div class="t" (click)="close()">
+            <ng-content></ng-content>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
 
-<div class="container bg-lighter carts p-4 vintage open">
+<div class="bg-lighter carts vintage open">
     
-        <mat-icon class="close vintage" (click)="close()">close</mat-icon>
+        <div class="container p-3 cart-content">
+            <mat-icon class="close vintage" (click)="close()">close</mat-icon>
 
-        <h3 class="vintage ms-2">Items in cart</h3>
+        <h1 class="vintage">CART.</h1>
 
         <div class="container">
-            <div class="row" *ngFor="let item of totalItems">
-                <mat-divider class="vint mb-4 mt-4"></mat-divider>
+            <div class="row mb-4" *ngFor="let item of totalItems">
                 <div class="col-4"><img src="{{item.url}}w=175&h=225&q=80" alt="" class="img-responsive img-fluid rounded"></div>
+                <div class="col-8">
+                    <h4 class="vintage ms-2">{{item.name}}</h4>
+                    <p class="vintage ms-2">Price: {{item.price}}</p>
+                    <p class="vintage ms-2"><span class="me-5" (click)="minusCart(item)">-</span>{{item.quantity}}<span class="ms-5 me-5" (click)="plusCart(item)">+</span></p>
+                </div>
             </div>
+        <p class="vintage" *ngIf="totalItems.length === 0">There are no items in cart.</p>
         </div>
-        <div class="container w-100 d-flex justify-content-between mt-4" *ngIf="totalItems.length>0">
+        </div>
+        <div class="d-flex vint align-items-center justify-content-between mt-4 based" *ngIf="totalItems.length>0">
             <button type="submit" mat-raised-button>Checkout</button>
-            <button type="submit" mat-raised-button (click)="emptyCart()">Empty <mat-icon>delete</mat-icon></button>
+            <p class="text-light ms-2">Total: {{cartMethods.getTotal()}} $</p>
         </div>
 </div>

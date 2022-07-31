@@ -21,6 +21,7 @@ export class SidebarComponent {
   panelOpenState = false;
   isLoggedIn: boolean = false;
   totalItems:any[] = [];
+  cartMethods: any;
 
   constructor(private breakpointObserver: BreakpointObserver, private token: TokenStorageService, private cart: CartService) { }
 
@@ -31,6 +32,9 @@ export class SidebarComponent {
     }
 
     this.totalItems = this.cart.cart
+    this.cartMethods = this.cart
+
+    console.log(this.cart.getTotal())
 
   }
 
@@ -56,5 +60,12 @@ export class SidebarComponent {
     window.location.reload()
   }
 
+  plusCart(product: any){
+    this.cart.addToCart(product)
+  }
+
+  minusCart(product: any){
+    this.cart.subtractFromCart(product)
+  }
 
 }

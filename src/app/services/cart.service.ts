@@ -10,23 +10,38 @@ export class CartService {
   cart: any[] = []
 
   addToCart(product: any){
-    this.cart.push(product)
+    if (this.cart.filter(item => item.id === product.id).length > 0){
+      this.cart.filter(item => item.id === product.id)[0].quantity++
+    } else{
+      product.quantity = 1
+      this.cart.push(product)
+    }
   }
 
   getCart(){
     return this.cart
   }
 
-  removeFromCart(product: any){
-    this.cart = this.cart.filter(item => item.id !== product.id)
+  subtractFromCart(product: any){
+    if (this.cart.filter(item => item.id === product.id).length > 0){
+      this.cart.filter(item => item.id === product.id)[0].quantity--
+      if (this.cart.filter(item => item.id === product.id)[0].quantity === 0){
+        this.cart.splice(this.cart.indexOf(product), 1)
+      }
+    }
   }
 
   clearCart(){
     this.cart = []
   }
 
+  
   getTotal(){
-    return this.cart.reduce((sum, current) => sum + current.price, 0)
+    let total = 0;
+    this.cart.forEach(item => {
+      total += item.price * item.quantity
+    })
+    return total
   }
   
   getCartLength(){
