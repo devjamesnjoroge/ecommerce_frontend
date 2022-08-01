@@ -158,16 +158,16 @@
                 <h4 class="vintage ms-2">{{item.name}}</h4>
                 <p class="vintage ms-2">Price: {{item.price}}</p>
                 <p class="vintage ms-2">
-                    <span class="me-4" (click)="minusCart(item)">-</span>
+                    <span class="me-4 thick" (click)="minusCart(item)">-</span>
                     {{item.quantity}}
-                    <span class="ms-4" appClose (click)="plusCart(item)">+</span></p>
+                    <span class="ms-4 thick" appClose (click)="plusCart(item)">+</span></p>
             </div>
         </div>
     <p class="vintage" *ngIf="totalItems.length === 0">There are no items in cart.</p>
     </div>
     </div>
     <div class="d-flex vint align-items-center justify-content-between mt-4 based" *ngIf="totalItems.length>0">
-        <button type="submit" mat-raised-button>Checkout</button>
+        <button type="submit" mat-raised-button (click)="checkOut()">Checkout</button>
         <p class="text-light ms-2">Total: {{cartMethods.getTotalCost()}} $</p>
     </div>
 </header>

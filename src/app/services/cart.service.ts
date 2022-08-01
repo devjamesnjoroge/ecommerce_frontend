@@ -39,6 +39,10 @@ export class CartService {
     } 
   }
 
+  getEachTotal(product: any){
+    return product.price * product.quantity;
+  }
+
   clearCart(){
     this.cart = [];
     this.saveCartChanges();

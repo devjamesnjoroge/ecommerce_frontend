@@ -54,11 +54,9 @@ export class SidebarComponent {
     document.querySelector(".carts")?.classList.add("closed")
   }
 
-
-  // emptyCart(){
-  //   this.cart.clearCart()
-  //   window.location.reload()
-  // }
+  checkOut(){
+    window.location.href = "/checkout"
+  }
 
   plusCart(product: any){
     this.cart.addToCart(product)

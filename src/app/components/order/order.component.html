@@ -1,0 +1,77 @@
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-5 vint pt-3 mb-5 rounded">
+            
+            <details>
+                <summary class="vint summary-row">
+                    
+                    <div class="sm"><mat-icon>shopping_cart</mat-icon>
+                        <p>View order summary</p>
+                    </div>
+                    <h3>{{cartS.getTotalCost()}} $.</h3>
+               
+                </summary>
+                
+                <div class="container pt-3 pb-3" *ngFor="let item of cartS.cart">
+                    <div class="summary-row vint">
+                       <div class="thumbnail">
+                        <img src="{{item.url}}w=85&h=110&q=80" class="img-fluid img-responsive" alt="">
+                        <div class="thumbnail-text">
+                            <h3>{{item.name}}</h3>
+                            <p>unit price: {{item.price}}</p>
+                        </div>
+                       </div>
+                       <span>{{cartS.getEachTotal(item)}} $</span>
+                    </div>
+                </div>
+            </details>
+
+            <section class="pt-5 pb-5">
+                  <mat-stepper class="rounded" orientation="vertical" [linear]="isLinear" #stepper>
+                    <mat-step [stepControl]="firstFormGroup">
+                      <form [formGroup]="firstFormGroup">
+                        <ng-template matStepLabel>Fill out your name</ng-template>
+                        <mat-form-field appearance="fill">
+                          <mat-label>First name</mat-label>
+                          <input matInput placeholder="First name" formControlName="fname" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="ms-3">
+                          <mat-label>Last name</mat-label>
+                          <input matInput placeholder="First name" formControlName="lname" required>
+                        </mat-form-field>
+                        <div>
+                          <button mat-button matStepperNext>Next</button>
+                        </div>
+                      </form>
+                    </mat-step>
+                    <mat-step [stepControl]="secondFormGroup">
+                      <form [formGroup]="secondFormGroup">
+                        <ng-template matStepLabel>Fill out your address</ng-template>
+                        <mat-form-field appearance="fill">
+                          <mat-label>Address</mat-label>
+                          <input matInput formControlName="address" placeholder="Ex. 1 Main St, New York, NY"
+                                 required>
+                        </mat-form-field>
+                        <div>
+                          <button mat-button matStepperPrevious>Back</button>
+                          <button mat-button matStepperNext>Next</button>
+                        </div>
+                      </form>
+                    </mat-step>
+                    <mat-step>
+                      <ng-template matStepLabel>Done</ng-template>
+                      <p>You are now done.</p>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button (click)="stepper.reset()">Reset</button>
+                      </div>
+                    </mat-step>
+                  </mat-stepper>
+                  
+
+            </section>
+    
+        </div>
+    </div>
+</div>
+

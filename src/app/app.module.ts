@@ -31,6 +31,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { CloseDirective } from './directives/close.directive';
 import { HoverDirective } from './directives/hover.directive';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { HoverDirective } from './directives/hover.directive';
     GalleryComponent,
     ProductComponent,
     CollectionsComponent,
+    OrderComponent,
     CloseDirective,
     HoverDirective,
   ],

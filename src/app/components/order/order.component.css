@@ -1,0 +1,48 @@
+details > summary{
+    list-style: none;
+}
+details > summary::--webkit-details-marker {
+  display: none !important;
+
+}
+
+.sm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.summary-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.thumbnail{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    border-radius: 3px;
+}
+
+.thumbnail-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+button{
+    color: #773f1a;
+}
+
+input:focus, input{
+    color: #000000;
+}
