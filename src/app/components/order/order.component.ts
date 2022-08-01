@@ -16,6 +16,8 @@ export class OrderComponent implements OnInit {
   });
   secondFormGroup = this._formBuilder.group({
     address: ['', Validators.required],
+    city: ['', Validators.required],
+    code: ['', Validators.required],
   });
   isLinear = true;
 
