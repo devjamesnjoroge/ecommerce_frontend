@@ -32,7 +32,7 @@ export class CartService {
     if (this.cart.filter((item: { id: any; }) => item.id == product.id)[0].quantity > 0){
       this.cart.filter((item: { id: any; }) => item.id == product.id)[0].quantity --;
       if (this.cart.filter((item: { id: any; }) => item.id == product.id)[0].quantity == 0){
-        this.cart.splice(this.cart.indexOf(this.cart.filter((item: { id: any; }) => item.id == product.id)[0]));
+        this.cart.splice(this.cart.indexOf(this.cart.filter((item: { id: any; }) => item.id == product.id)[0]), 1);
         this.saveCartChanges();
       }
       this.saveCartChanges();

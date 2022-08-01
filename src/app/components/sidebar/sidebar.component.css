@@ -78,6 +78,7 @@
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
   transition-delay: 0.1s;
+  padding-bottom: 10vh;
 }
 
 .cart-content{
