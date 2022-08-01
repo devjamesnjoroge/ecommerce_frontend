@@ -1,6 +1,7 @@
 <div class="container mb-5">
     <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-5  pt-3 mb-5 rounded">
+        <p class="vintage mt-5" *ngIf="cartS.cart.length == 0">No Items in cart, <a href="/">click here to buy</a></p>
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-5  pt-3 mb-5 rounded" *ngIf="cartS.cart.length > 0">
             
             <details>
                 <summary class=" summary-row">
