@@ -104,7 +104,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
             <div class="d-flex justify-content-between align-items-center container">
-                <span class="light">MAVAZI</span>
+               <a href="/home"><span class="light">MAVAZI</span></a>
               <form *ngIf="!(isHandset$ | async)">
                 <input type="text" name="search" id="search" class="search rounded ps-2" placeholder="search">
               </form>
@@ -138,8 +138,10 @@
             </div>
         </mat-toolbar>
         <!-- Add Content Here -->
-        <main class="t" (click)="close()">
-            <ng-content></ng-content>
+        <main >
+            <app-collections *ngIf="pathname == '/home'" (addNewEvent)="closeUp($event)"></app-collections>
+            <app-product *ngIf="pathname != '/home'" (addNewEvent)="closeUp($event)"></app-product>
+            <ng-content *ngIf="pathname != '/home' && pathname != '/product'"></ng-content>
         </main>
     </mat-sidenav-content>
 </mat-sidenav-container>

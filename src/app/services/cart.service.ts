@@ -43,6 +43,10 @@ export class CartService {
     return product.price * product.quantity;
   }
 
+  getProductById(id: any){
+    return this.cart.filter((item: { id: any; }) => item.id == id)[0];
+  }
+
   clearCart(){
     this.cart = [];
     this.saveCartChanges();

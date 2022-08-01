@@ -22,7 +22,6 @@ export class CollectionsComponent implements OnInit {
   addToCart(cart: any) {
     this.cart.addToCart(cart);
     this.addNewEvent.emit(true)
-    alert('Item added to cart')
   }
 
 }

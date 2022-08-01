@@ -23,6 +23,7 @@ export class SidebarComponent {
   isLoggedIn: boolean = false;
   totalItems:any[] = [];
   cartMethods: any;
+  pathname!: any;
 
   constructor(private breakpointObserver: BreakpointObserver, private token: TokenStorageService, private cart: CartService, private toggler:TogglerService) { }
 
@@ -34,6 +35,8 @@ export class SidebarComponent {
 
     this.totalItems = this.cart.cart
     this.cartMethods = this.cart
+
+    this.pathname = window.location.pathname;
 
   }
 
@@ -64,6 +67,13 @@ export class SidebarComponent {
 
   minusCart(product: any){
     this.cart.subtractFromCart(product)
+  }
+
+  closeUp(event: boolean){
+    if (event == true){
+      this.open()
+    }
+    
   }
 
 }
