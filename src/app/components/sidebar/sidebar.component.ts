@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { CartService } from 'src/app/services/cart.service';
+import { TogglerService } from 'src/app/services/toggler.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -23,7 +24,7 @@ export class SidebarComponent {
   totalItems:any[] = [];
   cartMethods: any;
 
-  constructor(private breakpointObserver: BreakpointObserver, private token: TokenStorageService, private cart: CartService) { }
+  constructor(private breakpointObserver: BreakpointObserver, private token: TokenStorageService, private cart: CartService, private toggler:TogglerService) { }
 
   ngOnInit() :void{
 
@@ -33,8 +34,6 @@ export class SidebarComponent {
 
     this.totalItems = this.cart.cart
     this.cartMethods = this.cart
-
-    console.log(this.cart.getTotal())
 
   }
 
@@ -55,10 +54,11 @@ export class SidebarComponent {
     document.querySelector(".carts")?.classList.add("closed")
   }
 
-  emptyCart(){
-    this.cart.clearCart()
-    window.location.reload()
-  }
+
+  // emptyCart(){
+  //   this.cart.clearCart()
+  //   window.location.reload()
+  // }
 
   plusCart(product: any){
     this.cart.addToCart(product)
