@@ -21,6 +21,7 @@ export class CollectionsComponent implements OnInit {
     }).catch(() => {
       console.log('error');
     });
+    
   }
 
   addToCart(cart: any) {
