@@ -13,10 +13,14 @@ export class CollectionsComponent implements OnInit {
 
   constructor(private cart: CartService, private products: ProductsService) { }
 
-  array: any[] = this.products.array;
+  array: any[] = [];
 
   ngOnInit(): void {
-    
+    this.products.getProducts().then(() => {
+      this.array = this.products.array;
+    }).catch(() => {
+      console.log('error');
+    });
   }
 
   addToCart(cart: any) {
