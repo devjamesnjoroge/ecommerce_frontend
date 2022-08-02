@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <style>
     .loader-wrap{
       height: 100vh;
@@ -24,8 +25,8 @@
       border-top: 10px solid #773f1a;
       width: 120px;
       height: 120px;
-      -webkit-animation: spin 2s linear infinite; /* Safari */
-      animation: spin 2s linear infinite;
+      -webkit-animation: spin 3s linear infinite; /* Safari */
+      animation: spin 3s linear infinite;
     }
     
     /* Safari */
@@ -44,5 +45,10 @@
   <app-root>
     <div class="loader-wrap"><div class="loader"></div></div>
   </app-root>
+  <script>
+    window.onload = function(){
+      document.querySelector('.loader-wrap').style.transitionDelay = '5s';
+    }
+  </script>
 </body>
 </html>
