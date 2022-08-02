@@ -18,6 +18,10 @@ export class CollectionsComponent implements OnInit {
   ngOnInit(): void {
     this.products.getProducts().then(() => {
       this.array = this.products.array;
+      if (this.products.array[0].url){
+        document.querySelector('.loader-wrap')?.classList.remove('show');
+        document.querySelector('.loader-wrap')?.classList.add('hide');
+      }
     }).catch(() => {
       console.log('error');
     });
